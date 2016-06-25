@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html ng-app="">
+<head>
+   <title>Home-Puppy Love</title>
+   <link rel="stylesheet" type="text/css" href="css/home.css">
+   <link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+   <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+   <script src="js/jquery-1.12.4.min.js"></script>
+   <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+   <script type="text/javascript" src="js/bootstrap.min.js"></script>
+   <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+   <script type="text/javascript" src="js/angular.min.js"></script>
+   <script type="text/javascript" src="datam.json"></script>
+   <script type="text/javascript" src="dataf.json"></script>
+   <script type="text/javascript" src="js/b.js"></script>
+</head>
+<body>
+   <div class="row banner">
+      <img src="images/logo.png">
+   </div>
+   <div class="row">
+		<div class="row">
+			<ul id="Tab" class="nav nav-pills nav-justified" role="tablist">
+    			<li class="active tab"><a href="#">Home</a></li>
+    			<li class="disabled tab"><a href="#">View Results</a></li>
+    			<li class="tab"><a href="howitworks.html">How It Works</a></li>
+    			<li class="tab"><a href="privacy.html">Privacy</a></li>
+    			<li class="tab"><a href="index.html">Logout</a></li>
+  			</ul>
+  		</div>
+   </div>
+  	<div class="row">
+		<div class="col-sm-2"></div>
+		<div class="col-sm-8">
+			<div class="row">
+				<input id="autocomplete-4" placeholder="Type name of crush">
+			</div>
+			<div class="col-sm-6 box" ng-repeat="n in [1,2,3,4]">
+				<img ng-attr-id="{{'crushpic'+($index+1)}}" src="images/pic.jpg" class="col-sm-4">
+				<div class="col-sm-8">
+          			<h3 ng-attr-id="{{'crushname'+($index+1)}}"></h3>
+          			<h3 ng-attr-id="{{'crushroll'+($index+1)}}"></h3>
+          			<h3 ng-attr-id="{{'crushdept'+($index+1)}}"></h3>
+        		</div>
+			</div>
+			</div>
+		<div class="col-sm-2"></div>
+	</div>
+	<div id="crushometer" class="row">
+		<div class="col-sm-3"></div>
+		<div class="col-sm-6">
+			<img src="images/crushometer.png" class="row center-block">
+			<div class="row">
+				<img ng-attr-id="{{'heart'+($index+1)}}" class="heart" src="images/heartempty.jpeg" ng-repeat="n in [1,2,3,4,5,6,7,8,9,10]">
+			</div>
+		</div>
+		<div class="col-sm-3"></div>
+	</div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Confirm your crush</h4>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <img id="modalpic" src="images/pic.jpg" class="col-sm-4">
+            <div class="col-sm-8">
+              <ul class="list-group">
+                <h4 id="modalname" class="list-group-item"></h4>
+                <h4 id="modalroll" class="list-group-item"></h4>
+                <h4 id="modaldept" class="list-group-item"></h4>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal" onclick="plzconfirm()">Confirm</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+   
+</body>
+</html>

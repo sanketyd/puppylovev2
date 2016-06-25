@@ -1,0 +1,16 @@
+.banner{
+	background-color: #ec4667;
+	text-align: center;
+	padding: 1%;
+}
+#Tab{
+	margin-top: 2%;
+	margin-bottom: 2%;
+	background-color: rgba(255, 192, 203, 0.37);
+	font-size: 1.3em;
+}
+.tab{
+	border-width: 1px;
+	border-style: solid;
+	border-color: lightpink;
+}
